@@ -4,9 +4,10 @@ services:
   freepbx-app:
     container_name: freepbx-app
     image: tiredofit/freepbx
+    hostname: freepbx
     ports:
      #### If you aren't using a reverse proxy
-     - 2000:80
+      - 2000:80
      #### If you want SSL Support and not using a reverse proxy
      #- 443:443
       - 5060:5060/udp
@@ -24,7 +25,7 @@ services:
      #- DEBUG_MODE=TRUE
       - VIRTUAL_HOST=hostname.example.com
      #- VIRTUAL_NETWORK=nginx-proxy
-	  - VIRTUAL_NETWORK=host
+      - VIRTUAL_NETWORK=host
      ### If you want to connect to the SSL Enabled Container 
      #- VIRTUAL_PORT=443
      #- VIRTUAL_PROTO=https
